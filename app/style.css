@@ -1,0 +1,92 @@
+th,tr,td{
+	border-bottom: 0.5px solid black;
+	text-align: left;
+	padding-top:8px;
+	padding-bottom: 8px;
+}
+tr{
+	width:100%;
+	
+}
+table{
+	width:60%;
+	margin-left:20%;
+	margin-right: 20%;
+
+}
+a{
+	font-family: 'Lucida Sans',sans-serif;
+	color:#07b0a5;
+	font-weight: bold;
+	padding-right: 20px;
+	font-size: 15px;
+	text-decoration: none;
+}
+.col-md-31{
+	display:block;
+	float:left;
+	width:33.33%;
+	box-shadow: 2px 4px 6px 3px grey;
+	padding: 30px 10px 15px;
+}
+.col-md-3{
+	display:block;
+	float:left;
+	width:25%;
+	border:2px solid white;
+}
+.lab{
+	margin-left: 15%;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    width: 70%;
+    font-size: 15px;
+}
+
+.box{
+	margin-left: 15%;
+    padding: 15px;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    width: 70%;
+    font-size: 15px;
+	border-bottom: 2px solid #07b0a5;
+	background-color: white;
+}
+
+.box1{
+	margin-left: 15%;
+	padding-bottom: 15px;
+	margin-top:10%;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    width: 70%;
+    font-size: 15px;
+}
+
+.container{
+	margin: 0 auto;
+    float: left;
+    width: 95%;
+    padding: 30px;
+}
+
+.keys{
+	float: left;
+	display:block;
+	padding-top: 30px;
+	margin-bottom: 30px;
+	margin-left:55%;
+	padding-bottom: 15px;
+	padding-left: 5%;
+}
+.keys input, .keys a input{
+	background-color: white;
+    color: #07b0a5;
+    font-weight: bold;
+}
+input{
+	border:none;	
+}

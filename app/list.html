@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title> User list</title> 
+    <link rel="stylesheet" type="text/css" href="style.css">        
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head> 
+<body>
+    <form id="anchor" action="check" method="post">
+        <table id="personDataTable">        
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>            
+        </table>
+        <div class="keys">
+                <input type="submit" value="Export Selected"/> 
+                <a href="downloadcsv">Export All</a>     
+        </div>
+    </form>
+    <script>
+        $.ajax({
+            url: '/list',
+            type: "get",
+            dataType: "json",
+            success: function(data, textStatus, jqXHR) {
+                drawTable(data);
+            }
+        });
+        function drawTable(data) {
+            for (var i = 0; i < data.length; i++) {
+                console.log(data[i]);
+                drawRow(data[i]);
+            }
+        }
+        function drawRow(rowData) {
+            var row = $("<tr />")
+            $("#personDataTable").append(row);
+            row.append($("<td>"+"<input type='checkbox' name='element' value="+rowData._id+"></input>"+"</td"))
+            row.append($("<td>" + rowData.name + "</td>"));
+            row.append($("<td>" + rowData.email + "</td>"));
+            row.append($("<td><a href='csv?id="+rowData._id+"'>Export</a></td>"));
+        }
+    </script>
+</body>
+</html>

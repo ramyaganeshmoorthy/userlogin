@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Signup Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script>
+		function wipe() {
+			document.forms["signupForm"]["name"].value = "";
+			document.forms["signupForm"]["password"].value = "";
+			document.forms["signupForm"]["re-type password"].value = "";
+			document.forms["signupForm"]["email"].value = "";
+		}
+		function formValidation() {
+			if (
+				document.forms["signupForm"]["name"].value == "" ||
+				document.forms["signupForm"]["password"].value == "" ||
+				document.forms["signupForm"]["re-type password"].value == "" ||
+				document.forms["signupForm"]["email"].value == ""
+			) {
+				alert("Fill in all details");
+				return false;
+			}
+			if (
+				document.forms["signupForm"]["password"].value != document.forms["signupForm"]["re-type password"].value
+			) {
+				alert("Password retyped mismatches with Password");
+				return false;
+			}
+			return true;
+		}
+
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-31">
+			<form name="signupForm" action="/sign_up" onsubmit="return formValidation()" method="post">
+				<label class="lab">Username</label>
+				<br/>
+				<input class="box" type="text" name="name" required/>
+				<br/>
+				<label class="lab">Password</label>
+				<br/>
+				<input class="box" type="password" name="password" required/>
+				<br/>
+				<label class="lab">re-type password</label>
+				<br/>
+				<input class="box" type="password" name="re-type password" required/>
+				<br/>
+				<label class="lab">email</label>
+				<br/>
+				<input class="box" type="email" name="email" required/>
+				<br/>
+				<div class="keys">
+					<input type="button" value="CANCEL" onclick="wipe()" />
+					<input type="submit" value="SIGN UP" />
+				</div>
+			</form>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+</body>
+</html>
