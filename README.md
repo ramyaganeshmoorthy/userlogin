@@ -3,7 +3,7 @@ Run below command for installing node dependencies
 >npm install
 
 Run the application by below command
->node app.js
+>node app/app.js
 
 # About the application
 This is a simple application with jquery, express js and mongodb.
